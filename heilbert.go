@@ -56,5 +56,5 @@ func Heibert(x []complex128, n int) ([]complex128, error) {
 		xx[i] = v * h[i]
 	}
 
-    return IFFT(xx, n), nil
+	return IFFT(xx, n), nil
 }

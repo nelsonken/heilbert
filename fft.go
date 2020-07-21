@@ -1,7 +1,8 @@
 package heilbert
-/** 
+
+/**
 * Fast Fourier Transform
-*/
+ */
 import (
 	"math"
 	"math/cmplx"
