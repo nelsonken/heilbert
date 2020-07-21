@@ -2,8 +2,6 @@ package heilbert
 
 import (
 	"errors"
-
-	"github.com/takatoh/fft"
 )
 
 // python implemention
@@ -41,7 +39,7 @@ func Heibert(x []complex128, n int) ([]complex128, error) {
 		return nil, errors.New("N must be positive.")
 	}
 
-	xf := fft.FFT(x, n)
+	xf := FFT(x, n)
 	h := make([]complex128, n)
 	if n&1 == 0 {
 		h[0] = 1
@@ -58,5 +56,5 @@ func Heibert(x []complex128, n int) ([]complex128, error) {
 		xx[i] = v * h[i]
 	}
 
-	return xx, nil
+    return IFFT(xx, n), nil
 }
